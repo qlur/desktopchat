@@ -1,0 +1,25 @@
+{
+  "name": "1.0",
+  "version": "1.0.0",
+  "description": "React/Node/Socket.io/MongoDB/Electron based cross-platform chat application",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "electron": "^10.1.1",
+    "laravel-mix": "^5.0.5",
+    "webpack": "^4.44.1"
+  }
+}
