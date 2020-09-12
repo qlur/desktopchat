@@ -8,7 +8,9 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      //nodeIntegration is now false by default in 5.0.0 so make sure to turn it on
+      nodeIntegration: true,
+      // preload: path.join(__dirname, 'preload.js')
     }
   })
 
