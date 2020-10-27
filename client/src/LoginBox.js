@@ -5,26 +5,25 @@ class LoginBox extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            username: '',
-            test: "working"
-        }
+            username: ''
+                    }
+
         this.userNameInput =React.createRef();
         this.submitHandler = this.submitHandler.bind(this);
     }
 
-    submitHandler(event){
+   async submitHandler(event){
         event.preventDefault();
+        console.log(`value by input: ${this.userNameInput.current.value}`);
         if(this.userNameInput.current.value === "") {
             alert("Please enter a valid username");
             return;
          }
-        
-   this.setState({username : this.userNameInput.current.value});
-   this.props.showLoginBox();
-   console.log(`${this.state.working}`);
-      ChatStore.init(this.state.username);
-        // alert(`Message sent: ${this.msgInput.current.value}`)
 
+         await this.setState({username : this.userNameInput.current.value});
+     await  ChatStore.init(this.state.username);
+     await this.props.showLoginBox();
+// await alert(this.state.username)
     
     }
 

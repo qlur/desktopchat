@@ -13,11 +13,18 @@ class App extends React.Component {
       this.state = {
           url: "http://localhost:3000",
           showLoginBox: true, 
-          messages: []
+          messages: [],
+          username: ''
     };
       this.initSocket();
       this.showLoginBox = this.showLoginBox.bind(this);
 
+
+      ChatStore.on("initialized", (username)=>{
+          this.setState({username: username});
+          console.log(`Username from App.js:  ${this.state.username}`)
+
+      })
 
       ChatStore.on("new-message", (msg)=>{
           //this one sents to server via IO emit
@@ -59,7 +66,7 @@ class App extends React.Component {
               <div id="side-area" className="cold-md-4 flex-grow-2">
                   Sidebar
               </div>
-             < ChatContainer />
+             <ChatContainer messages={this.state.messages} username={this.state.username} />
           </div>
           <ChatInputBar />
               </div>
