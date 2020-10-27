@@ -10,7 +10,7 @@ class ChatContainer extends Component {
         return(
             <div>
              <div id="mainarea" className="col-md-9 flex-grow-3">
-                  {this.props.username} - {this.props.messages}
+                  {this.props.username}
                   <ul>
                       <div className="messages-container-owner">
 
