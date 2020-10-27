@@ -11,18 +11,27 @@ class ChatContainer extends Component {
             <div>
              <div id="mainarea" className="col-md-9 flex-grow-3">
                   {this.props.username}
-                  <ul>
-                      <div className="messages-container-owner">
+                  <ul className="messages-container-owner">
 
                 {this.props.messages.map(
                     (messageObj, i) => {
                         if(messageObj.username === this.props.username){
-                         return <li className="message" key={i}> {messageObj.msg}</li> 
+                        return <li className="message" key={i}> {`You ` + messageObj.msg}</li> 
                       }
                     }
                 )}
 
-                          </div>  
+                  </ul>
+
+                  <ul className="message-container-sender">
+
+                  {this.props.messages.map(
+                    (messageObj, i) => {
+                        if(messageObj.username !== this.props.username){
+                        return <li className="message" key={i}> {`${this.props.username} - ` + messageObj.msg}</li> 
+                      }
+                    }
+                )}
                   </ul>
               </div>
             </div>

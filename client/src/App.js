@@ -37,9 +37,10 @@ class App extends React.Component {
       
       
 //Message from another user
-      this.io.on("receiving-message",newMsg=>{
-   this.setState((prevState)=>({messages: [...prevState.messages, newMsg]}));
- console.log("New message sent from another User: " + newMsg)
+      this.io.on("receiving-message",msg=>{
+          let newMsg = {msg: msg}
+   this.setState((prevState)=>({messages: [...prevState.messages, msg]})); //not sure about
+ console.log("New message sent from another User: " + msg)
 
   });
 

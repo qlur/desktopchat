@@ -9,14 +9,16 @@ class ChatInputBar extends React.Component {
         }
         this.msgInput = React.createRef();
         this.sendMessage = this.sendMessage.bind(this);
-    
+
     }
+
+
     sendMessage(event){
         event.preventDefault();
         this.setState({message: this.msgInput.current.value});
        //this one triggers the IO FIRST
         ChatStore.addMessage(this.msgInput.current.value);
-
+        event.target.value='';
     }
     
     render(){
