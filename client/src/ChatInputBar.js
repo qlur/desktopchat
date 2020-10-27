@@ -14,8 +14,9 @@ class ChatInputBar extends React.Component {
     sendMessage(event){
         event.preventDefault();
         this.setState({message: this.msgInput.current.value});
-        ChatStore.addMessage(this.msgInput.current.value)
-    // console.log(`Message sent: ${this.msgInput.current.value}`)
+       //this one triggers the IO FIRST
+        ChatStore.addMessage(this.msgInput.current.value);
+
     }
     
     render(){

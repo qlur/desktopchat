@@ -8566,6 +8566,10 @@ label {
 #chat-bar-container input {
   border-radius: 0;
   border: 1px solid #49b6bb;
+  height: 39px;
+  border: transparent;
+  background: #e6e6e6;
+  padding: 10px;
 }
 
 #chat-bar-container button {
